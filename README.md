@@ -28,14 +28,29 @@ would be located at `C:\path\to\FoveSDK\python\site-packages\fove`.
 So the `PYTHONPATH` environment variable for an instance of `cmd.exe` should be
 set as follows:
 ```
-> set PYTHONPATH="C:\path\to\FoveSDK\python\site-packages\fove";%PYTHONPATH%
+> set PYTHONPATH=C:\path\to\FoveSDK\python\site-packages;%PYTHONPATH%
 ```
+If the `PYTHONPATH` has properly been set, it should be reflected to the
+`sys.path` variable on the python runtime:
+```
+> python
+Python 3.7.5 (default, Oct 14 2019, 23:08:55)
+>>> import sys
+>>> sys.path
+[ ..., 'C:\\path\\to\\FoveSDK\\python\\site-packages', ...]
+```
+(Note that the pass separate `'\'` is escaped as `'\\'` because it is a meta
+variable for python strings.)
+
 Then, from the same `cmd.exe`, you should be able to run `sample.py` (provided
 that the file is in the current directory; `cd` (change directory) if not):
 ```
-> cd /pass/to/sample_py/
+> cd /pass/to/FovePythonSample/
 > dir
+LICENCE.txt
+README.md
 sample.py
+etc.
 > python sample.py
 ..
 ```
