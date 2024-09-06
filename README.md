@@ -19,9 +19,7 @@ Hello, Fove!
 >>> 1 + 1
 2
 ```
-Although the Fove Python bindings are supposed to work both for python versions
-`2.x` and `3.x`, we strongly recommend the users to use version `3.x`, unless
-there are strong reasons not to.
+We only support Python versions `3.8` through `3.11` at the current time.  
 
 If the Fove SDK has been installed to `C:\path\to\FoveSDK`, python bindings
 would be located at `C:\path\to\FoveSDK\python\site-packages\fove`.
